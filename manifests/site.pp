@@ -9,4 +9,8 @@ node slave1.puppet {
   package { 'htop':
   ensure => present,
   }
+  file {'/tmp/osinfo.txt':
+    ensure => file,
+    content => "Running os ${facts['os']['name']} version ${facts['os']['release']['full']}",
+  }
 }
