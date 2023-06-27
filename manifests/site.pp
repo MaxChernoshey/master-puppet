@@ -1,5 +1,5 @@
 node slave1.puppet {
-  package { 'apache2':
+  package { 'httpd':
     ensure => installed,
   }
   file { '/var/www/html/index.html':
@@ -15,7 +15,7 @@ node slave2.puppet {
   package { 'php':
     ensure => installed,
   
-  package { 'apache2':
+  package { 'httpd':
     ensure => installed,
   }
   file { '/var/www/html/index.html':
