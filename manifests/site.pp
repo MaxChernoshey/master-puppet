@@ -25,4 +25,4 @@ node slave2.puppet {
     path => '/var/www/html/index.php',
     source => 'https://raw.githubusercontent.com/MaxChernoshey/itacademy-devops-files/master/02-tools/index.php',
   }
- }
+}
