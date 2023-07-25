@@ -14,7 +14,7 @@ node slave1.puppet {
 node slave2.puppet {
   package { 'php':
     ensure => installed,
-  
+  }
   package { 'httpd':
     ensure => installed,
   }
