@@ -1,7 +1,7 @@
 node slave1.puppet {
   package { 'httpd':
-    ensure => installed,
-    ensure => running,
+    ensure => installed,running,
+    
   }
   
   file { '/var/www/html/index.html': 
