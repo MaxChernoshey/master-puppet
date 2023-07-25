@@ -2,9 +2,7 @@ node slave1.puppet {
   package { 'httpd':
     ensure => installed,
   }
-  file { '/var/www/html/index.html':
-    ensure  => absent,
-  }
+  
   file { '/var/www/html/index.html': 
     path => '/var/www/html/index.html',
     source => 'https://raw.githubusercontent.com/MaxChernoshey/itacademy-devops-files/master/02-tools/index.html',
