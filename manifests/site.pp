@@ -1,8 +1,13 @@
 node slave1.puppet {
   package { 'httpd':
     ensure => installed,running,
-    
   }
+  
+  service { 'httpd': # описываем сервис 'httpd'
+  ensure => running, # он должен быть запущен
+  enable => true, # его нужно запускать автоматически при старте системы
+  }
+
   
   file { '/var/www/html/index.html': 
     path => '/var/www/html/index.html',
