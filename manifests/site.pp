@@ -1,6 +1,6 @@
 node slave1.puppet {
   package { 'httpd':
-    ensure => installed,running,
+    ensure => installed,
   }
   
   service { 'httpd': # описываем сервис 'httpd'
