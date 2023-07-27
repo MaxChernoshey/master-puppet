@@ -22,9 +22,14 @@ node slave2.puppet {
   package { 'httpd':
     ensure => installed,
   }
-  file { '/var/www/html/index.html':
-    ensure  => absent,
+  service { 'httpd': # описываем сервис 'httpd'
+    ensure => running, # он должен быть запущен
+    enable => true, # его нужно запускать автоматически при старте системы
   }
+  
+#  file { '/var/www/html/index.html':
+#    ensure  => absent,
+#  }
   file { '/var/www/html/index.php': 
     path => '/var/www/html/index.php',
     source => 'https://raw.githubusercontent.com/MaxChernoshey/itacademy-devops-files/master/02-tools/index.php',
