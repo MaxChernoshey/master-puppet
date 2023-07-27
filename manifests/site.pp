@@ -7,7 +7,10 @@ node slave1.puppet {
     ensure => running, # он должен быть запущен
     enable => true, # его нужно запускать автоматически при старте системы
   }
-
+  service { 'firewalled'
+    ensure => stopped,
+    enable => false,
+  }
   
   file { '/var/www/html/index.html': 
     path => '/var/www/html/index.html',
@@ -26,9 +29,12 @@ node slave2.puppet {
     ensure => running, # он должен быть запущен
     enable => true, # его нужно запускать автоматически при старте системы
   }
-  
+  service { 'firewalled'
+    ensure => stopped,
+    enable => false,
+  }
   file { '/var/www/html/index.html':
-   ensure  => absent,
+    ensure  => absent,
   }
   
   file { '/var/www/html/index.php': 
