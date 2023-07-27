@@ -7,7 +7,8 @@ node slave1.puppet {
     ensure => running, # он должен быть запущен
     enable => true, # его нужно запускать автоматически при старте системы
   }
-  service { 'firewalled'
+  
+  service { 'firewalled':
     ensure => stopped,
     enable => false,
   }
@@ -29,7 +30,7 @@ node slave2.puppet {
     ensure => running, # он должен быть запущен
     enable => true, # его нужно запускать автоматически при старте системы
   }
-  service { 'firewalled'
+  service { 'firewalled':
     ensure => stopped,
     enable => false,
   }
